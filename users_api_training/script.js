@@ -19,12 +19,11 @@ async function fetchUserData() {
 
         
         userData.forEach((user, index) => {
-            const randomColor = getRandomColor();
             const cssRule = `
                 .tilesWrap li:nth-child(${index + 1}):before {
-                    background: ${randomColor};
-                    background: -webkit-linear-gradient(to right, ${randomColor}, ${randomColor});
-                    background: linear-gradient(to right, ${randomColor}, ${randomColor});
+                    background: ${getRandomColor()};
+                    background: -webkit-linear-gradient(to right, ${getRandomColor()}, ${getRandomColor()});
+                    background: linear-gradient(to right, ${getRandomColor()}, ${getRandomColor()});
                 }
             `;
             styleTag.appendChild(document.createTextNode(cssRule));
