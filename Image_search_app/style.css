@@ -359,4 +359,34 @@
     opacity: 1;
     bottom: 0px;
   }
+
+  body, #teste, .fh5co-gallery .gallery-item {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .fh5co-gallery img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .fh5co-gallery .gallery-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 200px;
+    margin: 10px;
+  }
+  
+  /* Adaptação para telas menores */
+  @media screen and (max-width: 600px) {
+    .fh5co-gallery .gallery-item {
+      min-height: 150px;
+    }
+  }
+  
+  
+  
   
