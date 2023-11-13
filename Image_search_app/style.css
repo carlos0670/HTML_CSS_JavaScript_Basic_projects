@@ -360,33 +360,43 @@
     bottom: 0px;
   }
 
-  body, #teste, .fh5co-gallery .gallery-item {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  .fh5co-gallery img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  .fh5co-gallery .gallery-item {
+  #teste {
     display: flex;
+    flex-wrap: wrap;
+}
+
+.gallery-item {
+    flex: 1 0 22%; /* Adiciona flex-basis para limitar o tamanho base dos itens e permitir até 4 por linha */
+    margin: 10px; /* Adiciona margem entre os itens (opcional) */
+    position: relative;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    min-height: 200px;
-    margin: 10px;
-  }
-  
-  /* Adaptação para telas menores */
-  @media screen and (max-width: 600px) {
-    .fh5co-gallery .gallery-item {
-      min-height: 150px;
-    }
-  }
-  
-  
-  
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+
+
   
